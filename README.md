@@ -1,4 +1,20 @@
-# react
+# food ordering
+/**
+ * Header
+ *  - Logo
+ *  - Links
+ * Body
+ *  - Search
+ *  - RestaurantContainer
+ *      - RestaurantCard
+ *              - Img
+ *              - Name of res, star rating, cuisine, delivery time
+ *  Footer
+ *      - Copyright
+ *      - Links
+ *      -Address
+ *      -Contact
+ */
 
 # Inception
 
