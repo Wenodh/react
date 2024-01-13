@@ -2,7 +2,6 @@
   "name": "react",
   "version": "1.0.0",
   "description": "Learning react indepth",
-  "main": "index.html",
   "scripts": {
     "start": "parcel index.html",
     "test": "test",
