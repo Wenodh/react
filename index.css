@@ -106,3 +106,14 @@ body{
     display:block;
     position: relative;
 }
+
+.filter-btn{
+    cursor: pointer;
+    padding: 10px;
+}
+
+.search-input{
+    padding: 10px;
+    margin: 0 5px;
+    min-width: 300px;
+}
