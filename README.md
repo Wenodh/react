@@ -257,6 +257,49 @@ Let's go through each question:
 
 Keep in mind that hooks, including `useState`, should always be used at the top level of your functional components and should not be used conditionally or in loops. This ensures that the order of hooks is consistent across renders, enabling React to correctly preserve the state between re-renders.
 
+1. **What is a Microservice?**
+   - Microservices is an architectural style where an application is structured as a collection of loosely coupled and independently deployable services. Each service, known as a microservice, is responsible for a specific business capability and communicates with other microservices through well-defined APIs.
+
+2. **What is Monolith architecture?**
+   - Monolithic architecture refers to an application design where all components and functionalities are tightly integrated into a single codebase and deployed as a single unit. In a monolith, the entire application, including the frontend, backend, and database, is developed and deployed as one large system.
+
+3. **Difference between Monolith and Microservice:**
+   - Monolith is a single, tightly-coupled application, while microservices involve breaking down an application into independently deployable, loosely coupled services. Microservices promote scalability, flexibility, and independent development and deployment of services, but they also introduce complexities in terms of distributed systems.
+
+4. **Why do we need a `useEffect` Hook?**
+   - The `useEffect` Hook in React is used for handling side effects in functional components. It allows you to perform operations such as data fetching, subscriptions, or manually changing the DOM in a way that integrates with React's lifecycle. `useEffect` is essential for managing side effects in a declarative and clean way.
+
+5. **What is Optional Chaining?**
+   - Optional chaining is a feature in JavaScript (introduced with ECMAScript 2020) that allows you to safely access nested properties or methods of an object without explicitly checking if each level of the property exists. It is denoted by the `?.` syntax.
+
+6. **What is Shimmer UI?**
+   - Shimmer UI is a user interface design pattern used to indicate that content is loading. It involves displaying a placeholder animation, often a subtle shimmer effect, in the area where the actual content will appear. Shimmer UI provides visual feedback to users while data is being fetched or processed.
+
+7. **Difference between JS expression and JS statement:**
+   - A JavaScript expression is a piece of code that produces a value, like a variable, a literal, or a function call. Examples include `5 + 3`, `myVariable`, or `Math.random()`.
+   - A JavaScript statement is a larger piece of code that performs a specific action but doesn't necessarily produce a value. Examples include `if`, `for`, `while`, or function declarations.
+
+8. **What is Conditional Rendering, explain with a code example:**
+   - Conditional rendering is the process of displaying different content or components based on certain conditions. In React, you can use conditional rendering within JSX using constructs like `if` statements or the ternary operator.
+
+   ```jsx
+   function ExampleComponent({ isLoggedIn }) {
+     return (
+       <div>
+         {isLoggedIn ? <p>Welcome, User!</p> : <p>Please log in.</p>}
+       </div>
+     );
+   }
+   ```
+
+9. **What is CORS?**
+   - Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers that restricts web pages from making requests to a different domain than the one that served the web page. CORS headers allow or deny cross-origin requests based on the server's configuration.
+
+10. **What is async and await?**
+    - `async` and `await` are features in JavaScript used for handling asynchronous code. The `async` keyword is used to declare a function as asynchronous, and the `await` keyword is used to pause the execution of the function until a promise is resolved. This allows writing asynchronous code in a more synchronous style.
+
+11. **What is the use of `const json = await data.json();` in `getRestaurants()`?**
+    - In asynchronous JavaScript, when fetching data from an API using `fetch`, the response is a promise. The `await` keyword is used to wait for the promise to resolve, and then `data.json()` is called to parse the response body as JSON. The resulting JSON data is stored in the `json` variable. This pattern is commonly used when working with asynchronous APIs in React or other JavaScript applications.
 
 
 # Config driven UI -

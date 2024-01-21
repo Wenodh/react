@@ -1,17 +1,17 @@
-*{
+* {
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
-body{
+body {
     margin: 0;
 }
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
-    position: fixed;
+    box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
+    /* position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -20,13 +20,13 @@ body{
     z-index: 1000;
     will-change: transform;
     transform: translateZ(0);
-    transition: transform .3s ease;
-    contain: size layout style;
+    transition: transform 0.3s ease;
+    contain: size layout style; */
     padding: 0 20px;
 }
-.body{
+.body {
     background-color: #ffffff;
-    padding-top: 80px;
+    /* padding-top: 80px; */
 }
 .logo {
     height: 70px;
@@ -43,19 +43,25 @@ body{
     padding: 10px;
 }
 
+.nav-item:hover {
+    color: orange;
+    font-weight: bold;
+}
+
 .search {
     padding: 10px;
 }
-.res-container{
-    display:flex;
+.res-container {
+    display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    overflow-wrap: break-word;
 }
-.res-cost{
+.res-cost {
     position: absolute;
     padding-left: 16px;
     padding-bottom: 16px;
-    padding-top: 80px;
+    /* padding-top: 80px; */
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     text-transform: uppercase;
@@ -67,7 +73,10 @@ body{
     font-size: 24px;
     letter-spacing: 1px;
     background: linear-gradient(rgba(27, 30, 36, 0) 0%, rgb(27, 30, 36) 84.21%);
-    background-image: linear-gradient(rgba(27, 30, 36, 0) 0%, rgb(27, 30, 36) 84.21%);
+    background-image: linear-gradient(
+        rgba(27, 30, 36, 0) 0%,
+        rgb(27, 30, 36) 84.21%
+    );
     background-position-x: initial;
     background-position-y: initial;
     background-size: initial;
@@ -80,9 +89,9 @@ body{
     padding: 5px;
     margin: 5px;
     width: 300px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
-.res-card:hover{
+.res-card:hover {
     /* border: 1px solid black; */
     /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     /* box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px; */
@@ -93,7 +102,7 @@ body{
     transform-origin: center center;
     transition: all 0.1s ease-in 0s;
 }
-.res-logo{
+.res-logo {
     width: 100%;
     height: 185px;
     object-fit: cover;
@@ -102,18 +111,48 @@ body{
     /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
 }
 
-.res-logo-container{
-    display:block;
+.res-logo-container {
+    display: block;
     position: relative;
 }
 
-.filter-btn{
+.filter-btn {
     cursor: pointer;
     padding: 10px;
+    margin-right: 10px;
 }
 
-.search-input{
+.search-input {
     padding: 10px;
-    margin: 0 5px;
     min-width: 300px;
+}
+
+.shimmer {
+    /* padding-top: 80px; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.shimmer-card {
+    width: 300px;
+    height: 270px;
+    background-color: gray;
+    margin: 5px;
+    border-radius: 16px;
+}
+
+.login {
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.user-card {
+    padding: 10px;
+    border: 1px solid black;
 }

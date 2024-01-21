@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Learning react indepth",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel public/index.html",
     "test": "test",
-    "build":"parcel build index.html",
+    "build": "parcel build public/index.html",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" 
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
   "dependencies": {
     "parcel": "^2.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.2"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
