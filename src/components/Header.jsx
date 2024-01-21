@@ -12,7 +12,7 @@ export default Header = () => {
             </div>
             <div className="nav-items">
                 <ul>
-                    <li>Online Status: {onlineStatus ? '🌍' : '🔴'}</li>
+                    <li className='nav-item'>Online Status: {onlineStatus ? '🌍' : '🔴'}</li>
                     <li >
                         <Link className='nav-item' to="/">Home</Link>
                     </li>
