@@ -36,9 +36,9 @@ export default Body = () => {
         <Shimmer />
     ) : (
         <div className="body">
-            <div className="search">
+            <div className="p-4 flex gap-2">
                 <input
-                    className="search-input"
+                    className="border-orange-400 border p-3 rounded-xl w-[300px]"
                     type="text"
                     placeholder="Type to search automatically"
                     onChange={(e) => {
@@ -47,11 +47,14 @@ export default Body = () => {
                     }}
                     value={searchText}
                 />
-                <button className="filter-btn" onClick={handleSearch}>
+                <button
+                    className="cursor-pointer p-3 border  shadow-2xl rounded-xl border-orange-500 hover:scale-105 hover:bg-orange-300 hover:text-white"
+                    onClick={handleSearch}
+                >
                     Search
                 </button>
                 <button
-                    className="filter-btn"
+                    className="cursor-pointer p-3 border  shadow-2xl rounded-xl border-orange-500 hover:scale-105 hover:bg-orange-300 hover:text-white"
                     onClick={() => {
                         setFilteredResData(
                             resData.filter((it) => it.info.avgRating > 4)
@@ -61,7 +64,7 @@ export default Body = () => {
                     Top Rated Restaurants
                 </button>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap gap-2 md:gap-4 overflow-wrap-break">
                 {filteredResData?.map((data) => (
                     <Link
                         to={`/restaurants/${data.info.id}`}

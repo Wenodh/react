@@ -6,37 +6,52 @@ export default Header = () => {
     const onlineStatus = useOnlineStatus();
     const [btnName, setBtnName] = useState('Login');
     return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src={logo} alt="logo" />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li className='nav-item'>Online Status: {onlineStatus ? '🌍' : '🔴'}</li>
-                    <li >
-                        <Link className='nav-item' to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link  className='nav-item' to="/about">About Us</Link>
-                    </li>
-                    <li>
-                        <Link  className='nav-item' to="/contact">Contact Us</Link>
-                    </li>
-                    <li>
-                        <Link  className='nav-item'>Cart</Link>
-                    </li>
-                    <button
-                        className="login"
-                        onClick={() =>
-                            btnName === 'Login'
-                                ? setBtnName('Logout')
-                                : setBtnName('Login')
-                        }
+        <div className="flex justify-between items-center p-2 border-b shadow-xl ">
+            <img className="h-20" src={logo} alt="logo" />
+            <ul className="flex text-xl list-none items-center">
+                <li className="px-5 text-orange-500 font-bold hover:text-red-500 ">
+                    Online Status: {onlineStatus ? '🌍' : '🔴'}
+                </li>
+                <li>
+                    <Link
+                        className="px-5 text-orange-500 font-bold hover:text-red-500"
+                        to="/"
                     >
-                        {btnName}
-                    </button>
-                </ul>
-            </div>
+                        Home
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        className="px-5 text-orange-500 font-bold hover:text-red-500"
+                        to="/about"
+                    >
+                        About Us
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        className="px-5 text-orange-500 font-bold hover:text-red-500"
+                        to="/contact"
+                    >
+                        Contact Us
+                    </Link>
+                </li>
+                <li>
+                    <Link className="px-5 text-orange-500 font-bold hover:text-red-500">
+                        Cart
+                    </Link>
+                </li>
+                <button
+                    className="cursor-pointer p-3 border  shadow-2xl rounded-xl border-orange-500 hover:scale-105 hover:bg-orange-300 hover:text-white"
+                    onClick={() =>
+                        btnName === 'Login'
+                            ? setBtnName('Logout')
+                            : setBtnName('Login')
+                    }
+                >
+                    {btnName}
+                </button>
+            </ul>
         </div>
     );
 };
