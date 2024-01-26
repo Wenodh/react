@@ -22,20 +22,31 @@ export default RestaurantCard = (props) => {
                 </div>
             </div>
             <div className="p-1">
-                <div className="text-lg font-bold overflow-hidden overflow-ellipsis text-nowrap">
+                <div className="text-base font-medium overflow-hidden overflow-ellipsis text-nowrap whitespace-nowrap">
                     {name}
                 </div>
                 <div>
                     <span>{avgRatingString} starts - </span>
                     <span>38 minutes</span>
                 </div>
-                <div className="text-gray-500 text-lg font-light overflow-hidden overflow-ellipsis text-nowrap">
+                <div className="text-gray-500 text-base font-light overflow-hidden overflow-ellipsis text-nowrap whitespace-nowrap">
                     {cuisines.join(',')}
                 </div>
-                <div className="text-gray-500 text-lg font-light overflow-hidden overflow-ellipsis whitespace-no-wrap">
+                <div className="text-gray-500 text-base font-light overflow-hidden overflow-ellipsis whitespace-no-wrap">
                     {areaName}
                 </div>
             </div>
         </div>
     );
+};
+
+export const withPromotedLabel = (RestaurantCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label className='absolute bg-black text-white z-10 p-2 rounded-lg'>Promoted</label>
+                <RestaurantCard {...props} />
+            </div>
+        );
+    };
 };

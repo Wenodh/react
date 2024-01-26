@@ -1,4 +1,4 @@
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard, { withPromotedLabel } from './RestaurantCard';
 import { resData } from './../utils/mockData';
 import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer';
@@ -7,10 +7,12 @@ import useOnlineStatus from './../utils/useOnlineStatus';
 import useRestaurantsData from './../utils/useRestaurantsData';
 
 export default Body = () => {
+    const onlineStatus = useOnlineStatus();
     const { listOfResData, loading } = useRestaurantsData();
     const [filteredResData, setFilteredResData] = useState(listOfResData);
     const [searchText, setSearchText] = useState('');
-    const onlineStatus = useOnlineStatus();
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
     useEffect(() => {
         if ((!loading, filteredResData.length === 0)) {
             setFilteredResData(listOfResData);
@@ -65,12 +67,16 @@ export default Body = () => {
                 </button>
             </div>
             <div className="flex flex-wrap gap-2 md:gap-4 overflow-wrap-break">
-                {filteredResData?.map((data) => (
+                {filteredResData?.map((restaurant) => (
                     <Link
-                        to={`/restaurants/${data.info.id}`}
-                        key={data.info.id}
+                        to={`/restaurants/${restaurant.info.id}`}
+                        key={restaurant.info.id}
                     >
-                        <RestaurantCard resData={data} />
+                        {restaurant?.promoted ? (
+                            <RestaurantCardPromoted resData={restaurant} />
+                        ) : (
+                            <RestaurantCard resData={restaurant} />
+                        )}
                     </Link>
                 ))}
             </div>

@@ -7,7 +7,9 @@ export default Header = () => {
     const [btnName, setBtnName] = useState('Login');
     return (
         <div className="flex justify-between items-center p-2 border-b shadow-xl ">
-            <img className="h-20" src={logo} alt="logo" />
+                <Link to="/">
+                    <img className="h-20"  src={logo} alt="logo" />
+                </Link>
             <ul className="flex text-xl list-none items-center">
                 <li className="px-5 text-orange-500 font-bold hover:text-red-500 ">
                     Online Status: {onlineStatus ? '🌍' : '🔴'}

@@ -1,34 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import Shimmer from './Shimmer';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { MENU_API } from '../utils/constants';
 import useRestaurantMenu from '../utils/useRestaurantMenu';
+import Shimmer from './Shimmer';
+import RestaurantInfo from './RestaurantInfo';
+import RestaurantCategories from './RestaurantCategories';
 
 const RestaurantMenu = () => {
-    const {resId} = useParams()
-    const resInfo = useRestaurantMenu(resId)
+    const { resId } = useParams();
+    const resInfo = useRestaurantMenu(resId);
     if (resInfo === null) return <Shimmer />;
-    const { name, cuisines, costForTwoMessage } =
-        resInfo?.find((it) => it?.card?.card?.info).card.card
-            .info || {};
-    const itemCards = resInfo?.find((it) => it.groupedCard)
-        .groupedCard.cardGroupMap.REGULAR.cards.find(
-            (it) => it.card.card.itemCards
-        ).card.card.itemCards;
+    const restaurantInfo =
+        resInfo?.find((it) => it?.card?.card?.info).card.card.info || {};
+    const categories = resInfo
+        ?.find((it) => it.groupedCard)
+        .groupedCard.cardGroupMap.REGULAR.cards.filter(
+            (card) => card?.card?.card?.["@type"]?.includes("ItemCategory")
+    );
     return (
-        <div className="menu">
-            <h1>{name}</h1>
-            <h2>{cuisines.join(',')}</h2>
-            <h3>{costForTwoMessage}</h3>
-            <ul>
-                {itemCards?.map((it) => (
-                    <li key={it?.card?.info?.id}>
-                        {it?.card?.info?.name} - Rs.
-                        {(it?.card?.info?.price ||
-                            it?.card?.info?.defaultPrice) / 100}
-                    </li>
-                ))}
-            </ul>
+        <div className="px-4">
+            <RestaurantInfo data={restaurantInfo} />
+            {categories.map((category) => (
+                <RestaurantCategories
+                    key={category?.card?.card.title}
+                    data={category?.card?.card}
+                />
+            ))}
         </div>
     );
 };
