@@ -12,8 +12,20 @@
  *  Footer
  *      - Copyright
  *      - Links
- *      -Address
- *      -Contact
+ *      - Address
+ *      - Contact
+ *  Redux ToolKit
+ *      - Install @reduxjs/toolkit & react-redux
+ *      - Build Store
+ *      - Connect store to our app
+ *      - Create Slice
+ *      - Dispatch Action
+ *      - Selector
+  *  Testing
+ *      - Manual Testing
+ *      - Unit Testing -> test react component in isolation
+ *      - Integration Testing ->  
+ *      - E2E testing -> 
  */
 
 # Inception

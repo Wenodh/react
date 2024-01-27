@@ -1,14 +1,22 @@
 import React from 'react';
 import { CATEGORY_CDN_URL } from '../utils/constants';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../utils/cartSlice';
 
 const ItemCard = ({ data }) => {
     const { name, description, imageId, isBestseller } = data;
+    const dispatch = useDispatch();
+    const handleAddItem = () => {
+        dispatch(addItem(data));
+    };
     // console.log(data);
     return (
         <div className="flex border-b-[1px] border-gray-300 pt-4">
             <div className="w-9/12 font-medium">
                 {isBestseller && (
-                    <div className="text-orange-300 font-bold">🌟Bestseller🌟</div>
+                    <div className="text-orange-300 font-bold">
+                        🌟Bestseller🌟
+                    </div>
                 )}
                 <div>
                     <span>{data?.isVeg ? '🥦 ' : '🍗 '}</span>
@@ -40,9 +48,10 @@ const ItemCard = ({ data }) => {
                     />
                 )}
                 <button
-                    className={`text-green-600 px-6 py-1 rounded-md border-gray-300 border bg-white shadow-lg text-sm font-bold ${
+                    className={`text-green-600 px-6 py-1 rounded-md border-gray-300 border bg-white shadow text-sm  hover:shadow-xl font-bold ${
                         imageId && 'relative bottom-5'
                     }`}
+                    onClick={handleAddItem}
                 >
                     ADD
                 </button>

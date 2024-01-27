@@ -8,7 +8,9 @@ export default RestaurantCard = (props) => {
         costForTwo,
         cuisines,
         areaName,
+        sla
     } = props.resData?.info;
+
     return (
         <div className="w-[90vw] md:w-[300px] transform hover:scale-95 origin-center transition-all duration-100 ease-in-out">
             <div className="block relative">
@@ -26,8 +28,8 @@ export default RestaurantCard = (props) => {
                     {name}
                 </div>
                 <div>
-                    <span>{avgRatingString} starts - </span>
-                    <span>38 minutes</span>
+                    <span>{avgRatingString}🌟  | </span>
+                    <span>{sla?.slaString}</span>
                 </div>
                 <div className="text-gray-500 text-base font-light overflow-hidden overflow-ellipsis text-nowrap whitespace-nowrap">
                     {cuisines.join(',')}
