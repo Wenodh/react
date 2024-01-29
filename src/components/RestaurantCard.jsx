@@ -10,7 +10,6 @@ const RestaurantCard = (props) => {
         areaName,
         sla
     } = props.resData?.info;
-    console.log(props.resData)
     return (
         <div data-testid="resCard" className="w-[90vw] md:w-[300px] transform hover:scale-95 origin-center transition-all duration-100 ease-in-out">
             <div className="block relative">

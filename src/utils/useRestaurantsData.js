@@ -11,6 +11,8 @@ const useRestaurantsData = () => {
     }, []);
 
     const fetchData = async () => {
+        if (process.env.NODE_ENV === "production") console.log("production")
+        console.log(process.env.NODE_ENV )
         try {
             const response = await fetch(RESTAURANTS_URL);
 
