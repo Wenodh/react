@@ -1,11 +1,10 @@
 import { useContext, useState } from 'react';
-import logo from '../../logo.png';
+import logo from '../logo.png';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext';
-import Cart from './Cart';
 import { useSelector } from 'react-redux';
-export default Header = () => {
+const Header = () => {
     const onlineStatus = useOnlineStatus();
     const [btnName, setBtnName] = useState('Login');
     const { loggedInUser } = useContext(UserContext);
@@ -44,7 +43,10 @@ export default Header = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link className="px-5 text-orange-500 font-bold hover:text-red-500 relative" to="/cart">
+                    <Link
+                        className="px-5 text-orange-500 font-bold hover:text-red-500 relative"
+                        to="/cart"
+                    >
                         🛍
                         <div className="text-xs absolute bottom-6 right-3 text-white bg-orange-500 rounded-full p-1 text-center">
                             {cartItems.length}
@@ -65,3 +67,5 @@ export default Header = () => {
         </div>
     );
 };
+
+export default Header;

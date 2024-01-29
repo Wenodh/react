@@ -1,37 +1,46 @@
 {
-  "name": "react",
-  "version": "1.0.0",
-  "description": "Learning react indepth",
-  "scripts": {
-    "start": "parcel public/index.html",
-    "test": "test",
-    "build": "parcel build public/index.html",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Wenodh/react.git"
-  },
-  "author": "Wenodh",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Wenodh/react/issues"
-  },
-  "homepage": "https://Wenodh.github.io/react",
-  "dependencies": {
-    "@reduxjs/toolkit": "^2.1.0",
-    "parcel": "^2.11.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^9.1.0",
-    "react-router-dom": "^6.21.2"
-  },
-  "devDependencies": {
-    "@testing-library/react": "^14.1.2",
-    "gh-pages": "^6.1.1",
-    "postcss": "^8.4.33",
-    "process": "^0.11.10",
-    "tailwindcss": "^3.4.1"
-  }
+    "name": "react",
+    "version": "1.0.0",
+    "description": "Learning react indepth",
+    "scripts": {
+        "start": "parcel public/index.html",
+        "test": "jest",
+        "build": "parcel build public/index.html",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "watch": "jest --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/Wenodh/react.git"
+    },
+    "author": "Wenodh",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Wenodh/react/issues"
+    },
+    "homepage": "https://Wenodh.github.io/react",
+    "dependencies": {
+        "@reduxjs/toolkit": "^2.1.0",
+        "parcel": "^2.11.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-redux": "^9.1.0",
+        "react-router-dom": "^6.21.2"
+    },
+    "devDependencies": {
+        "@babel/plugin-syntax-jsx": "^7.23.3",
+        "@babel/preset-env": "^7.23.9",
+        "@babel/preset-react": "^7.23.3",
+        "@testing-library/jest-dom": "^6.3.0",
+        "@testing-library/react": "^14.1.2",
+        "babel-core": "^6.26.3",
+        "gh-pages": "^6.1.1",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "postcss": "^8.4.33",
+        "process": "^0.11.10",
+        "tailwindcss": "^3.4.1"
+    }
 }

@@ -1,14 +1,15 @@
-import React, { Suspense, lazy, useEffect, useState } from 'react';
+import { default as React, Suspense, lazy, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import '../index.css';
-import Header from './components/Header';
-import Body from './components/Body';
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Shimmer from './components/Shimmer';
-import UserContext from './utils/UserContext';
 import { Provider } from 'react-redux';
-import appStore from './utils/appStore';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Body from './components/Body';
 import Cart from './components/Cart';
+import Header from './components/Header';
+import Shimmer from './components/Shimmer';
+import './index.css';
+import UserContext from './utils/UserContext';
+import appStore from './utils/appStore';
+import Error from "./components/Error"
 
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -80,6 +81,6 @@ const appRouter = createBrowserRouter([
     },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const App = () => <RouterProvider router={appRouter} />
 
-root.render(<RouterProvider router={appRouter} />);
+export default App

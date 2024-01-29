@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import useOnlineStatus from './../utils/useOnlineStatus';
 import useRestaurantsData from './../utils/useRestaurantsData';
 
-export default Body = () => {
+const Body = () => {
     const onlineStatus = useOnlineStatus();
     const { listOfResData, loading } = useRestaurantsData();
     const [filteredResData, setFilteredResData] = useState(listOfResData);
@@ -42,6 +42,7 @@ export default Body = () => {
                 <input
                     className="border-orange-400 border p-3 rounded-xl w-[300px]"
                     type="text"
+                    data-testid="searchInput"
                     placeholder="Type to search automatically"
                     onChange={(e) => {
                         if (!e.target.value) setFilteredResData(listOfResData);
@@ -83,3 +84,5 @@ export default Body = () => {
         </div>
     );
 };
+
+export default Body;

@@ -1,0 +1,85 @@
+{
+    "info": {
+        "id": "168816",
+        "name": "Faasos - Wraps, Rolls & Shawarma",
+        "cloudinaryImageId": "af33b81798b11deba338e94b7585d348",
+        "locality": "Suchitra",
+        "areaName": "Quthbullapur",
+        "costForTwo": "₹200 for two",
+        "cuisines": [
+            "Kebabs",
+            "Fast Food",
+            "Snacks",
+            "American",
+            "Healthy Food",
+            "Desserts",
+            "Beverages"
+        ],
+        "avgRating": 3.9,
+        "parentId": "21809",
+        "avgRatingString": "3.9",
+        "totalRatingsString": "5K+",
+        "sla": {
+            "deliveryTime": 28,
+            "lastMileTravel": 3,
+            "serviceability": "SERVICEABLE",
+            "slaString": "25-30 mins",
+            "lastMileTravelString": "3.0 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-01-28 23:59:00",
+            "opened": true
+        },
+        "badges": {
+            "textExtendedBadges": [
+                {
+                    "iconId": "guiltfree/GF_Logo_android_3x",
+                    "shortDescription": "options available",
+                    "fontColor": "#7E808C"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "",
+                                "fontColor": "#7E808C",
+                                "iconId": "guiltfree/GF_Logo_android_3x",
+                                "shortDescription": "options available"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "₹125 OFF",
+            "subHeader": "ABOVE ₹199",
+            "discountTag": "FLAT DEAL"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {},
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/faasos-wraps-rolls-and-shawarma-suchitra-quthbullapur-hyderabad-168816",
+        "type": "WEBLINK"
+    }
+}

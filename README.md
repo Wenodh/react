@@ -26,6 +26,17 @@
  *      - Unit Testing -> test react component in isolation
  *      - Integration Testing ->  
  *      - E2E testing -> 
+   *  Testing
+ *      - Install React testing library
+ *      - Installed jest
+ *      - Installed Babel dependencies
+ *      - Configure Babel
+*      - Configure Parcel Config file to disable default babel transpilation
+ *      - jest -jest-init
+ *      - Install jsdom library
+ *      - Install @babel/preset-react - to make JSX work in test cases
+ *      - Include @babel/preset-react inside my babel config
+ *      - Install @testing-library/jest-dom
  */
 
 # Inception

@@ -1,6 +1,6 @@
 import { RESTAURANT_CDN_URL } from '../utils/constants';
 
-export default RestaurantCard = (props) => {
+const RestaurantCard = (props) => {
     const {
         name,
         avgRatingString,
@@ -10,9 +10,9 @@ export default RestaurantCard = (props) => {
         areaName,
         sla
     } = props.resData?.info;
-
+    console.log(props.resData)
     return (
-        <div className="w-[90vw] md:w-[300px] transform hover:scale-95 origin-center transition-all duration-100 ease-in-out">
+        <div data-testid="resCard" className="w-[90vw] md:w-[300px] transform hover:scale-95 origin-center transition-all duration-100 ease-in-out">
             <div className="block relative">
                 <img
                     className="w-full h-[185px] object-cover rounded-3xl"
@@ -52,3 +52,5 @@ export const withPromotedLabel = (RestaurantCard) => {
         );
     };
 };
+
+export default RestaurantCard 
