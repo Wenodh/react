@@ -9,7 +9,8 @@ import Shimmer from './components/Shimmer';
 import './index.css';
 import UserContext from './utils/UserContext';
 import appStore from './utils/appStore';
-import Error from "./components/Error"
+import Error from './components/Error';
+import { Toaster } from 'react-hot-toast';
 
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -28,10 +29,11 @@ const AppLayout = () => {
                 value={{ loggedInUser: userName, setUserName }}
             >
                 <Header />
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-1 sm:px-4 ">
                     <Outlet />{' '}
                 </div>
                 {/* <SpeedInsights /> */}
+                <Toaster position="bottom-center" reverseOrder={false} />
             </UserContext.Provider>
         </Provider>
     );
@@ -83,6 +85,6 @@ const appRouter = createBrowserRouter([
     },
 ]);
 
-const App = () => <RouterProvider router={appRouter} />
+const App = () => <RouterProvider router={appRouter} />;
 
-export default App
+export default App;
