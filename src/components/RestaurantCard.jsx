@@ -11,7 +11,7 @@ const RestaurantCard = (props) => {
         sla
     } = props.resData?.info;
     return (
-        <div data-testid="resCard" className="w-[90vw] md:w-[300px] transform hover:scale-95 origin-center transition-all duration-100 ease-in-out">
+        <div data-testid="resCard" className="w-[calc(100vw_-_16px)] sm:w-[300px] transform hover:scale-95 origin-center transition-all duration-100 ease-in-out">
             <div className="block relative">
                 <img
                     className="w-full h-[185px] object-cover rounded-3xl"

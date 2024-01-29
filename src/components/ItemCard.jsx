@@ -41,7 +41,7 @@ const ItemCard = ({ data }) => {
                     {description}
                 </p>
             </div>
-            <div className="sm:w-3/12 w-4/12 px-2 sm:px-4 flex flex-col items-center">
+            <div className="sm:w-3/12 w-4/12 pl-2 sm:px-4 flex flex-col items-center">
                 {imageId && (
                     <img
                         className="rounded-lg w-[140px] h-28 object-cover"
