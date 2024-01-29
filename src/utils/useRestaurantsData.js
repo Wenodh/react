@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { RESTAURANTS_URL } from './constants';
+import MOCK_DATA from "../mocks/resListData"
 
 const useRestaurantsData = () => {
     const [listOfResData, setListOfResData] = useState([]);
@@ -30,6 +31,13 @@ const useRestaurantsData = () => {
         } catch (error) {
             setError('Error fetching data');
             console.error('Error fetching data:', error);
+            const restaurantData = MOCK_DATA?.data?.cards.find(
+                (it) =>
+                    it?.card?.card?.gridElements?.infoWithStyle?.restaurants
+                        ?.length >= 0
+            ).card?.card?.gridElements?.infoWithStyle?.restaurants;
+            setListOfResData(restaurantData);
+            setLoading(false);
         } finally {
             setLoading(false);
         }

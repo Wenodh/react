@@ -14,6 +14,7 @@ import Error from "./components/Error"
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
 const RestaurantMenu = lazy(() => import('./components/RestaurantMenu'));
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const AppLayout = () => {
     const [userName, setUserName] = useState();
@@ -30,6 +31,7 @@ const AppLayout = () => {
                 <div className="container mx-auto px-4">
                     <Outlet />{' '}
                 </div>
+                <SpeedInsights />
             </UserContext.Provider>
         </Provider>
     );

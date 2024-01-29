@@ -10,7 +10,7 @@ const Header = () => {
     const { loggedInUser } = useContext(UserContext);
     const cartItems = useSelector((store) => store.cart.items);
     return (
-        <div className="flex justify-between items-center p-2 border-b shadow-xl ">
+        <div className="flex justify-between items-center p-2 border-b shadow-xl sticky top-0 bg-white z-10">
             <Link to="/">
                 <img className="h-20" src={logo} alt="logo" />
             </Link>

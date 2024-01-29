@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MENU_API } from './constants';
+import MOCK_DATA from"../mocks/resMenuList"
 
 const useRestaurantMenu = (resId) => {
     const [resInfo, setResInfo] = useState(null);
@@ -14,6 +15,7 @@ const useRestaurantMenu = (resId) => {
             setResInfo(json.data.cards);
         } catch (error) {
             console.error('Error fetching menu data:', error);
+            setResInfo(MOCK_DATA?.[resId]?.data?.cards || MOCK_DATA?.[17103].data.cards);
         }
     };
     return resInfo;

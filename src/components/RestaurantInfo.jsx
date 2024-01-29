@@ -13,7 +13,7 @@ const RestaurantInfo = ({ data }) => {
     } = data;
     return (
         <div>
-            <h1 className="font-bold pb-1">{name}</h1>
+            <h1 className="font-bold pt-2 pb-1 text-orange-500 hover:text-red-500">* {name} *</h1>
             <div className="text-gray-500 pb-1 text-xs font-light ">
                 {cuisines.join(',')}
             </div>
