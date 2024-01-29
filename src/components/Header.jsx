@@ -88,7 +88,7 @@ const Header = () => {
             <ul
                 className={`sm:hidden ${
                     isContentVisible ? 'hidden' : 'block'
-                } text-xl list-none items-center py-1`}
+                } text-base list-none items-center py-1`}
             >
                 <li className="hover:bg-orange-100 hover:translate-x-1 py-3 px-1">
                     <Link
