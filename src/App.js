@@ -14,7 +14,7 @@ import Error from "./components/Error"
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
 const RestaurantMenu = lazy(() => import('./components/RestaurantMenu'));
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights"
 
 const AppLayout = () => {
     const [userName, setUserName] = useState();
