@@ -70,9 +70,10 @@ const Body = () => {
                     Top Rated Restaurants
                 </button>
             </div>
-            <div className="flex flex-wrap gap-2 md:gap-4 overflow-wrap-break">
+            <div className="flex flex-wrap gap-[1%] lg:gap-[2%] overflow-wrap-break">
                 {filteredResData?.map((restaurant) => (
                     <Link
+                        className="w-[100%] sm:w-[32%]  lg:w-[23%] xl:w-[18%]"
                         to={`/restaurants/${restaurant.info.id}`}
                         key={restaurant.info.id}
                     >

@@ -8,10 +8,13 @@ const RestaurantCard = (props) => {
         costForTwo,
         cuisines,
         areaName,
-        sla
+        sla,
     } = props.resData?.info;
     return (
-        <div data-testid="resCard" className="w-[calc(100vw_-_16px)] sm:w-[300px] transform hover:scale-95 origin-center transition-all duration-100 ease-in-out">
+        <div
+            data-testid="resCard"
+            className="w-[100%] transform hover:scale-95 origin-center transition-all duration-100 ease-in-out"
+        >
             <div className="block relative">
                 <img
                     className="w-full h-[185px] object-cover rounded-3xl"
@@ -27,7 +30,7 @@ const RestaurantCard = (props) => {
                     {name}
                 </div>
                 <div>
-                    <span>{avgRatingString}🌟  | </span>
+                    <span>{avgRatingString}🌟 | </span>
                     <span>{sla?.slaString}</span>
                 </div>
                 <div className="text-gray-500 text-base font-light overflow-hidden overflow-ellipsis text-nowrap whitespace-nowrap">
@@ -45,11 +48,13 @@ export const withPromotedLabel = (RestaurantCard) => {
     return (props) => {
         return (
             <div>
-                <label className='absolute bg-black text-white z-10 p-2 rounded-lg'>Promoted</label>
+                <label className="absolute bg-black text-white z-10 p-2 rounded-lg">
+                    Promoted
+                </label>
                 <RestaurantCard {...props} />
             </div>
         );
     };
 };
 
-export default RestaurantCard 
+export default RestaurantCard;
