@@ -11,7 +11,6 @@ const ItemCard = ({ data }) => {
         dispatch(addItem(data));
         toast.success('Successfully add to Cart!')
     };
-    // console.log(data);
     return (
         <div className="flex border-b-[1px] border-gray-300 pt-4">
             <div className="sm:w-9/12 w-8/12 font-medium">

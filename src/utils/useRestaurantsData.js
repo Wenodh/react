@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { RESTAURANTS_URL } from './constants';
-import MOCK_DATA from "../mocks/resListData"
+import MOCK_DATA from '../mocks/resListData';
 
 const useRestaurantsData = () => {
     const [listOfResData, setListOfResData] = useState([]);
@@ -12,8 +12,6 @@ const useRestaurantsData = () => {
     }, []);
 
     const fetchData = async () => {
-        if (process.env.NODE_ENV === "production") console.log("production")
-        console.log(process.env.NODE_ENV )
         try {
             const response = await fetch(RESTAURANTS_URL);
 
