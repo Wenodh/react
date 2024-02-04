@@ -4,6 +4,7 @@ import { COLLECTIONS } from '../utils/constants';
 import MOCK_DATA from '../mocks/collectionsMock.json';
 import Title from './Title';
 import RestaurantCard from './RestaurantCard';
+import Shimmer from './Shimmer';
 
 const Collections = () => {
     const { collectionId } = useParams();
@@ -40,7 +41,7 @@ const Collections = () => {
             );
         }
     };
-
+    if (!headerDetails) return <Shimmer />;
     return (
         <div className="pt-6">
             <h1 className="text-5xl font-semibold">
