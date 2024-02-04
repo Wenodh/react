@@ -11,6 +11,7 @@ import UserContext from './utils/UserContext';
 import appStore from './utils/appStore';
 import Error from './components/Error';
 import { Toaster } from 'react-hot-toast';
+import Collections from './components/Collections';
 
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -77,6 +78,14 @@ const appRouter = createBrowserRouter([
                 element: (
                     <Suspense fallback={<Shimmer />}>
                         <Cart />
+                    </Suspense>
+                ),
+            },
+            {
+                path: '/collections/:collectionId',
+                element: (
+                    <Suspense fallback={<Shimmer />}>
+                        <Collections />
                     </Suspense>
                 ),
             },

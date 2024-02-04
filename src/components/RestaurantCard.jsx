@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
     return (
         <div
             data-testid="resCard"
-            className="w-[100%] transform hover:scale-95 origin-center transition-all duration-100 ease-in-out"
+            className="w-[100%] transform hover:scale-95 origin-center transition-all duration-100 ease-in-out py-2"
         >
             <div className="block relative">
                 <img

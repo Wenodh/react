@@ -43,14 +43,20 @@ const BrowseCard = ({ data }) => {
                 <Title title={data?.card?.card?.header.title} />
                 <div className="border-b-2 border-gray-200 pb-7">
                     <div className="flex overflow-x-scroll  ">
-                        <div className="flex gap-2 p-2">
+                        <div className="flex p-2">
                             {data?.card?.card?.gridElements?.infoWithStyle?.info.map(
                                 (it) => (
-                                    <img
-                                        src={CATEGORY_CDN_URL + it.imageId}
-                                        alt=""
+                                    <Link
+                                        className="w-44 transform hover:scale-95 origin-center transition-all duration-100 ease-in-out"
                                         key={it.id}
-                                    />
+                                        to={`/collections/${it.id}`}
+                                        state={{ url: it.action.link }}
+                                    >
+                                        <img
+                                            src={CATEGORY_CDN_URL + it.imageId}
+                                            alt=""
+                                        />
+                                    </Link>
                                 )
                             )}
                         </div>

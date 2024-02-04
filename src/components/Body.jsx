@@ -9,7 +9,6 @@ import Shimmer from './Shimmer';
 const Body = () => {
     const onlineStatus = useOnlineStatus();
     const { listOfResData, loading } = useRestaurantsData();
-    console.log(listOfResData);
     const [filteredResData, setFilteredResData] = useState([]);
     const [searchText, setSearchText] = useState('');
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
@@ -48,7 +47,7 @@ const Body = () => {
         <Shimmer />
     ) : (
         <div className="body">
-            <div>
+            {/* <div>
                 <>
                     <input
                         className="border-orange-400 border p-3 rounded-xl max-w-[300px] mt-4 mr-1"
@@ -79,7 +78,7 @@ const Body = () => {
                 >
                     Top Rated Restaurants
                 </button>
-            </div>
+            </div> */}
             {/* <div className="flex flex-wrap gap-[1%] lg:gap-[2%] overflow-wrap-break">
                 {filteredResData?.map((restaurant) => (
                     <Link
