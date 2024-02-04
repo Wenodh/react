@@ -20,20 +20,12 @@ const useRestaurantsData = () => {
             }
 
             const json = await response.json();
-            const restaurantData = json?.data?.cards.find(
-                (it) =>
-                    it?.card?.card?.gridElements?.infoWithStyle?.restaurants
-                        ?.length >= 0
-            ).card?.card?.gridElements?.infoWithStyle?.restaurants;
+            const restaurantData = json?.data?.cards;
             setListOfResData(restaurantData);
         } catch (error) {
             setError('Error fetching data');
             console.error('Error fetching data:', error);
-            const restaurantData = MOCK_DATA?.data?.cards.find(
-                (it) =>
-                    it?.card?.card?.gridElements?.infoWithStyle?.restaurants
-                        ?.length >= 0
-            ).card?.card?.gridElements?.infoWithStyle?.restaurants;
+            const restaurantData = MOCK_DATA?.data?.cards;
             setListOfResData(restaurantData);
             setLoading(false);
         } finally {

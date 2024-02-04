@@ -1,21 +1,31 @@
-import RestaurantCard, { withPromotedLabel } from './RestaurantCard';
-import { resData } from './../utils/mockData';
 import { useEffect, useState } from 'react';
-import Shimmer from './Shimmer';
-import { Link } from 'react-router-dom';
+import { resData } from './../utils/mockData';
 import useOnlineStatus from './../utils/useOnlineStatus';
 import useRestaurantsData from './../utils/useRestaurantsData';
+import BrowseCard from './BrowseCard';
+import RestaurantCard, { withPromotedLabel } from './RestaurantCard';
+import Shimmer from './Shimmer';
 
 const Body = () => {
     const onlineStatus = useOnlineStatus();
     const { listOfResData, loading } = useRestaurantsData();
-    const [filteredResData, setFilteredResData] = useState(listOfResData);
+    console.log(listOfResData);
+    const [filteredResData, setFilteredResData] = useState([]);
     const [searchText, setSearchText] = useState('');
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
     useEffect(() => {
-        if ((!loading, filteredResData.length === 0)) {
-            setFilteredResData(listOfResData);
+        if (
+            !loading &&
+            filteredResData?.length === 0 &&
+            listOfResData?.length !== 0
+        ) {
+            let restaurants = listOfResData?.find(
+                (it) =>
+                    it?.card?.card?.gridElements?.infoWithStyle?.restaurants
+                        ?.length >= 0
+            ).card?.card?.gridElements?.infoWithStyle?.restaurants;
+            setFilteredResData(restaurants);
         }
     }, [loading]);
     const handleSearch = () => {
@@ -70,7 +80,7 @@ const Body = () => {
                     Top Rated Restaurants
                 </button>
             </div>
-            <div className="flex flex-wrap gap-[1%] lg:gap-[2%] overflow-wrap-break">
+            {/* <div className="flex flex-wrap gap-[1%] lg:gap-[2%] overflow-wrap-break">
                 {filteredResData?.map((restaurant) => (
                     <Link
                         className="w-[100%] sm:w-[32%]  lg:w-[23%] xl:w-[18%]"
@@ -83,6 +93,11 @@ const Body = () => {
                             <RestaurantCard resData={restaurant} />
                         )}
                     </Link>
+                ))}
+            </div> */}
+            <div>
+                {listOfResData.map((card) => (
+                    <BrowseCard data={card} key={card.card.card.id} />
                 ))}
             </div>
         </div>
