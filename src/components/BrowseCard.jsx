@@ -10,15 +10,11 @@ const BrowseCard = ({ data }) => {
             <div>
                 <Title title={data.card.card.title} />
                 <div className="border-b-2 border-gray-200 pb-7">
-                    <div className="flex flex-wrap justify-between overflow-wrap-break">
+                    <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 overflow-wrap-break">
                         {data.card?.card?.brands.slice(0, 12).map((brand) => (
                             <div
                                 key={brand.id}
-                                className={`border text-center border-gray-200 px-4 my-2 py-4 ${
-                                    data.card?.card?.brands.length <= 2
-                                        ? 'w-[49%] '
-                                        : 'w-[49%] xl:w-[24%] sm:w-[32%]'
-                                } rounded overflow-hidden overflow-ellipsis text-nowrap whitespace-nowrap hover:opacity-70 hover:scale-105 cursor-pointer`}
+                                className={`border text-center border-gray-200 px-4 my-2 py-4  rounded overflow-hidden overflow-ellipsis text-nowrap whitespace-nowrap hover:opacity-70 hover:scale-105 cursor-pointer`}
                             >
                                 {brand.text}
                             </div>
@@ -103,11 +99,11 @@ const BrowseCard = ({ data }) => {
     if (data?.card?.card?.gridElements?.infoWithStyle?.restaurants) {
         return (
             <div className="border-b-2 border-gray-200 pb-7">
-                <div className="flex flex-wrap gap-[1%] lg:gap-[2%] overflow-wrap-break">
+                <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 overflow-wrap-break">
                     {data.card.card.gridElements.infoWithStyle.restaurants.map(
                         (restaurant) => (
                             <Link
-                                className="w-[100%] sm:w-[32%]  lg:w-[23%] xl:w-[18%]"
+                                // className="w-[100%] sm:w-[32%]  lg:w-[23%] xl:w-[18%]"
                                 to={`/restaurants/${restaurant.info.id}`}
                                 key={restaurant.info.id}
                             >

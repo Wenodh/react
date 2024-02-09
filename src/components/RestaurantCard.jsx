@@ -21,23 +21,23 @@ const RestaurantCard = (props) => {
                     src={RESTAURANT_CDN_URL + cloudinaryImageId}
                     alt="res-logo"
                 />
-                <div className="absolute bottom-0 left-0 w-full p-4 text-uppercase text-white font-bold text-2xl uppercase border-b-16px rounded-b-3xl bg-gradient-to-t from-slate-800">
+                <div className="absolute bottom-0 left-0 w-full p-4 text-uppercase text-white font-bold sm:text-xl mg:text-2xl uppercase border-b-16px rounded-b-3xl bg-gradient-to-t from-slate-800">
                     {costForTwo}
                 </div>
             </div>
-            <div className="p-1">
-                <div className="text-base font-medium overflow-hidden overflow-ellipsis text-nowrap whitespace-nowrap">
+            <div className="p-1 text-sm md:text-base">
+                <div className="font-medium overflow-hidden overflow-ellipsis text-nowrap whitespace-nowrap">
                     {name}
                 </div>
                 <div>
                     <span>{avgRatingString}🌟 | </span>
-                    <span>{sla?.slaString}</span>
+                    <span>{sla?.slaString} ⏰</span>
                 </div>
-                <div className="text-gray-500 text-base font-light overflow-hidden overflow-ellipsis text-nowrap whitespace-nowrap">
+                <div className="text-gray-500 font-light overflow-hidden overflow-ellipsis text-nowrap whitespace-nowrap text-xs md:text-sm ">
                     {cuisines.join(',')}
                 </div>
-                <div className="text-gray-500 text-base font-light overflow-hidden overflow-ellipsis whitespace-no-wrap">
-                    {areaName}
+                <div className="text-gray-500 text-xs md:text-sm font-light overflow-hidden overflow-ellipsis whitespace-no-wrap">
+                    🌍 {areaName}
                 </div>
             </div>
         </div>
